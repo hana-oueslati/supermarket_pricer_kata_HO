@@ -9,8 +9,11 @@ public class Item {
     public Item(String name, float price) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Item name should not be null, empty or whitespace");
-        else
-            this.name = name;
+        this.name = name;
         this.price = price;
+    }
+
+    public float getPrice() {
+        return price;
     }
 }
