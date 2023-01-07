@@ -13,8 +13,10 @@ public class Basket {
         return items;
     }
 
-    public void addItems(Item item, int quantity){
-
+    public void addItems(Item item, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            items.add(item);
+        }
     }
 
 }

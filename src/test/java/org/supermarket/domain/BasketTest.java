@@ -34,7 +34,7 @@ public class BasketTest extends TestCase {
         basket.addItems(beanCan, 2);
 
         //then
-        assertEquals(2,Collections.frequency(basket.getItems(), beanCan));
+        assertEquals(2, Collections.frequency(basket.getItems(), beanCan));
     }
 
 }
