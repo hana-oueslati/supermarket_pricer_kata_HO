@@ -3,8 +3,8 @@ package org.supermarket.domain;
 import org.apache.commons.lang3.StringUtils;
 
 public class Item {
-    private String name;
-    private float price;
+    private final String name;
+    private final float price;
     private String promotionName;
 
     public Item(String name, float price) {

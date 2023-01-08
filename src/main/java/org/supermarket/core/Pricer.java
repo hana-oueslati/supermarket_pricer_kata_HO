@@ -3,17 +3,21 @@ package org.supermarket.core;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;
 
-import java.util.Map;
-
 public class Pricer implements IPricer {
     public Pricer() {
     }
 
     public float countBasicTotalPrice(Item item, int quantity) {
-        return 0;
+        return item.getPrice() * quantity;
     }
 
-    public float countPackagePromotionTotalPrice(Map<String, Promotion> promotionsDictionary, Item item, int quantity) {
-        return 0;
+    public float countPackagePromotionTotalPrice(Promotion promotion, Item item, int quantity) {
+        int quantityForReduction = promotion.getQuantity();
+        float reductionValue = promotion.getPrice();
+        int fullPriceProductsNumber = quantity % quantityForReduction;
+        int timesReductionApplied = quantity / quantityForReduction;
+        float reducedPrice = timesReductionApplied * reductionValue;
+        float unreducedPrice = fullPriceProductsNumber * item.getPrice();
+        return reducedPrice + unreducedPrice;
     }
 }

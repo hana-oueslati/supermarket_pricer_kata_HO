@@ -1,10 +1,9 @@
 package org.supermarket.domain;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
 import static org.junit.Assert.assertThrows;
-
-import org.junit.Test;
 
 public class ItemTest extends TestCase {
 

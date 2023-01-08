@@ -3,7 +3,7 @@ package org.supermarket.domain;
 import java.util.List;
 
 public class Basket {
-    private List<Item> items;
+    private final List<Item> items;
 
     public Basket(List<Item> items) {
         this.items = items;

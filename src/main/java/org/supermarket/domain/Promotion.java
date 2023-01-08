@@ -9,9 +9,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Promotion {
-    private String name;
-    private float price;
-    private int quantity;
+    private final String name;
+    private final float price;
+    private final int quantity;
 
     public Promotion(String name, float price, int quantity) {
         if (StringUtils.isBlank(name))
@@ -19,6 +19,12 @@ public class Promotion {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public static Map<String, Promotion> getMappedPromotions(List<Promotion> promotions) {
+        if (promotions != null && !promotions.isEmpty())
+            return promotions.stream().collect(Collectors.toMap(Promotion::getName, Function.identity()));
+        else return new HashMap<>();
     }
 
     public String getName() {
@@ -31,13 +37,5 @@ public class Promotion {
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public static Map<String, Promotion> getMappedPromotions(List<Promotion> promotions) {
-        if (promotions != null && !promotions.isEmpty())
-            return promotions.stream()
-                    .collect(Collectors.toMap(Promotion::getName, Function.identity()));
-        else
-            return new HashMap<>();
     }
 }
