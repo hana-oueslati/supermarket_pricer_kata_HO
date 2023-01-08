@@ -13,14 +13,15 @@ import static org.junit.Assert.assertThrows;
 public class CheckoutTest extends TestCase {
 
     Checkout checkout;
+    IPricer pricer = new Pricer();
 
     @Test
     public void test_null_basket_throws_exception(){
         //given
-        checkout = new Checkout();
+        checkout = new Checkout(pricer);
 
         //then
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> checkout.getTotalPrice(null));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> checkout.getTotalPrice(null,null));
         assertEquals("Basket should not be null", exception.getMessage());
 
     }
@@ -28,20 +29,20 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_empty_basket_shoud_return_zero() {
         //given
-        checkout = new Checkout();
+        checkout = new Checkout(pricer);
         Basket basket = new Basket(new ArrayList<>());
 
         //when
         float requiredTotal = 0;
 
         //then
-        assertEquals(requiredTotal, checkout.getTotalPrice(basket));
+        assertEquals(requiredTotal, checkout.getTotalPrice(basket,null));
     }
 
     @Test
     public void test_basic_basket_total_price_count() {
         //given
-        checkout = new Checkout();
+        checkout = new Checkout(pricer);
         Basket basket = new Basket(new ArrayList<>(Arrays.asList(new Item("pasta", 2.6f),
                 new Item("water", 1.8f))));
 
@@ -49,7 +50,7 @@ public class CheckoutTest extends TestCase {
         float requiredTotal = 4.3999996f;
 
         //then
-        assertEquals(requiredTotal, checkout.getTotalPrice(basket));
+        assertEquals(requiredTotal, checkout.getTotalPrice(basket,null));
 
     }
 
