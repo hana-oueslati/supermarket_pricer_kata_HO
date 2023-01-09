@@ -46,7 +46,8 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_basic_basket_total_price_count() {
         //given
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 2.6f), new ItemDetails("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 2.6f),
+                new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
             put("three-for-one-dollar", new Promotion("package", "three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("package", "two-for-two-dollars", 2, 2));
@@ -62,7 +63,8 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_basket_total_price_count_with_package_promotion() {
         //given
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
             put("three-for-one-dollar", new Promotion("package", "three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("package", "two-for-two-dollars", 2, 2));
@@ -79,7 +81,8 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_should_not_apply_promotion_because_quantity_is_less_then_required() {
         //given
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
             put("three-for-one-dollar", new Promotion("package", "three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("package", "two-for-two-dollars", 2, 2));
@@ -96,7 +99,12 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_basket_price_with_different_promotion_types() {
         //given
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f, "buy-2-get-1-free"), new ItemDetails("water", 1.8f, "buy-2-get-1-free"), new ItemDetails("water", 1.8f, "buy-2-get-1-free"), new ItemDetails("water", 1.8f, "buy-2-get-1-free"))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("water", 1.8f, "buy-2-get-1-free"),
+                new ItemDetails("water", 1.8f, "buy-2-get-1-free"),
+                new ItemDetails("water", 1.8f, "buy-2-get-1-free"),
+                new ItemDetails("water", 1.8f, "buy-2-get-1-free"))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
             put("three-for-one-dollar", new Promotion("package", "three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("package", "two-for-two-dollars", 2, 2));
@@ -113,7 +121,9 @@ public class CheckoutTest extends TestCase {
     @Test
     public void test_basket_price_with_weight_and_number_promotion_types() {
         //given
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("sugar", 1.39f, "2-pounds-for-one-dollar", 1, "kilogram", "pound", 2))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("pasta", 1.6f, "two-for-two-dollars"),
+                new ItemDetails("sugar", 1.39f, "2-pounds-for-one-dollar", 1, "kilogram", "pound", 2))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
             put("three-for-one-dollar", new Promotion("package", "three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("package", "two-for-two-dollars", 2, 2));

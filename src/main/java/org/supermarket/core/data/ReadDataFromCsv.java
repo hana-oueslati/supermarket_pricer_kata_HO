@@ -1,6 +1,7 @@
 package org.supermarket.core.data;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;
 
 import java.io.FileNotFoundException;
@@ -22,6 +23,10 @@ public class ReadDataFromCsv {
         } catch (FileNotFoundException e) {
             return new ArrayList<>();
         }
+    }
+
+    public static List<Item> readItems(String fileName){
+        return new ArrayList<>();
     }
 
 

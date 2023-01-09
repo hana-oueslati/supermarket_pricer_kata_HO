@@ -1,5 +1,6 @@
 package org.supermarket.core;
 
+import org.apache.commons.lang3.StringUtils;
 import org.supermarket.domain.Basket;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.ItemDetails;
@@ -52,7 +53,7 @@ public class Checkout {
         for (Map.Entry<String, List<ItemDetails>> entry : collectedItems.entrySet()) {
             ItemDetails item = entry.getValue().get(0);
             int count = entry.getValue().size();
-            if (item.getUnit() != null)
+            if (!StringUtils.isBlank(item.getUnit()))
                 totalPrice[0] += processWeightBasedTotalPrice(item, count);
             else {
                 totalPrice[0] += processNumberBasedTotalPrice(item, count);
