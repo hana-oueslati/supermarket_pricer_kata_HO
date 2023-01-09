@@ -26,7 +26,14 @@ public class ReadDataFromCsv {
     }
 
     public static List<Item> readItems(String fileName){
-        return new ArrayList<>();
+        try {
+            return new CsvToBeanBuilder<Item>(new FileReader(fileName))
+                    .withType(Item.class)
+                    .build()
+                    .parse();
+        } catch (FileNotFoundException e) {
+            return new ArrayList<>();
+        }
     }
 
 
