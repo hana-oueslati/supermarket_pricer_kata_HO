@@ -20,7 +20,11 @@ public class Pricer implements IPricer {
     }
 
     public float countOfferPromotionTotalPrice(Promotion promotion, Item item, int quantity) {
-        return 0;
+        int quantityForOffer = promotion.getQuantity() + promotion.getQuantityOffered();
+        int timesOfferApplied = quantity / quantityForOffer;
+        int numberOfFreeProducts = timesOfferApplied * promotion.getQuantityOffered();
+        int priceToBeCounted = quantity - numberOfFreeProducts;
+        return priceToBeCounted * item.getPrice();
     }
 
 

@@ -26,7 +26,7 @@ public class Promotion {
         this.type = type;
     }
 
-    public Promotion(String type, String name, int quantity,int quantityOffered) {
+    public Promotion(String name, int quantity,int quantityOffered,String type) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Promotion name should not be null, empty or whitespace");
         this.name = name;

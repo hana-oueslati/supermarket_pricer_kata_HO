@@ -35,7 +35,7 @@ public class PricerTest extends TestCase {
     @Test
     public void test_should_return_item_total_with_offer_promotion() {
         //given
-        Promotion promotion = new Promotion("offer","buy-2-get-1-free", 2, 1);
+        Promotion promotion = new Promotion("buy-2-get-1-free", 2, 1,"offer");
         Item item = new Item("water", 1.6f, "buy-2-get-1-free");
         Pricer pricer = new Pricer();
         int quantity = 5;
