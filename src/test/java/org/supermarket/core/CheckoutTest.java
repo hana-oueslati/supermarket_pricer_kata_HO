@@ -48,8 +48,8 @@ public class CheckoutTest extends TestCase {
         //given
         Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 2.6f), new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
-            put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
-            put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
+            put("three-for-one-dollar", new Promotion("package","three-for-one-dollar", 1, 3));
+            put("two-for-two-dollars", new Promotion("package","two-for-two-dollars", 2, 2));
         }};
         checkout = new Checkout(pricer, weightPricer, promotions);
         //when
@@ -64,8 +64,8 @@ public class CheckoutTest extends TestCase {
         //given
         Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
-            put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
-            put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
+            put("three-for-one-dollar", new Promotion("package","three-for-one-dollar", 1, 3));
+            put("two-for-two-dollars", new Promotion("package","two-for-two-dollars", 2, 2));
         }};
         checkout = new Checkout(pricer, weightPricer, promotions);
         //when
@@ -81,8 +81,8 @@ public class CheckoutTest extends TestCase {
         //given
         Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
         Map<String, Promotion> promotions = new HashMap<String, Promotion>() {{
-            put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
-            put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
+            put("three-for-one-dollar", new Promotion("package","three-for-one-dollar", 1, 3));
+            put("two-for-two-dollars", new Promotion("package","two-for-two-dollars", 2, 2));
         }};
         checkout = new Checkout(pricer, weightPricer, promotions);
         //when

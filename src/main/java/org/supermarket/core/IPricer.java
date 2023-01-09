@@ -9,4 +9,7 @@ public interface IPricer {
 
     float countPackagePromotionTotalPrice(Promotion promotion, Item item, int qty);
 
+    float countOfferPromotionTotalPrice(Promotion promotion, Item item, int qty);
+
+
 }

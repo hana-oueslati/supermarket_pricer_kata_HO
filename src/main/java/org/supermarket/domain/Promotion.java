@@ -12,16 +12,27 @@ public class Promotion {
     private String name;
     private float price;
     private int quantity;
+    private int quantityOffered;
     private String unit;
     private float weight;
+    private String type;
 
-
-    public Promotion(String name, float price, int quantity) {
+    public Promotion(String type, String name, float price, int quantity) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Promotion name should not be null, empty or whitespace");
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.type = type;
+    }
+
+    public Promotion(String type, String name, int quantity,int quantityOffered) {
+        if (StringUtils.isBlank(name))
+            throw new IllegalArgumentException("Promotion name should not be null, empty or whitespace");
+        this.name = name;
+        this.quantityOffered = quantityOffered;
+        this.quantity = quantity;
+        this.type = type;
     }
 
     public Promotion(String name, float price, String unit, float weight) {
@@ -75,5 +86,21 @@ public class Promotion {
 
     public void setWeight(float weight) {
         this.weight = weight;
+    }
+
+    public int getQuantityOffered() {
+        return quantityOffered;
+    }
+
+    public void setQuantityOffered(int quantityOffered) {
+        this.quantityOffered = quantityOffered;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

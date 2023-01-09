@@ -19,5 +19,9 @@ public class Pricer implements IPricer {
         return reducedPrice + unreducedPrice;
     }
 
+    public float countOfferPromotionTotalPrice(Promotion promotion, Item item, int quantity) {
+        return 0;
+    }
+
 
 }

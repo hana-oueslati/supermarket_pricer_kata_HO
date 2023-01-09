@@ -20,9 +20,9 @@ public class PricerTest extends TestCase {
     }
 
     @Test
-    public void test_should_return_item_total_with_promotion() {
+    public void test_should_return_item_total_with_package_promotion() {
         //given
-        Promotion promotion = new Promotion("two-for-two-dollars", 2, 2);
+        Promotion promotion = new Promotion("package","two-for-two-dollars", 2, 2);
         Item item = new Item("water", 1.6f, "two-for-two-dollars");
         Pricer pricer = new Pricer();
         int quantity = 5;
@@ -30,5 +30,18 @@ public class PricerTest extends TestCase {
         float expected = 5.6f;
         //then
         assertEquals(expected, pricer.countPackagePromotionTotalPrice(promotion, item, quantity));
+    }
+
+    @Test
+    public void test_should_return_item_total_with_offer_promotion() {
+        //given
+        Promotion promotion = new Promotion("offer","buy-2-get-1-free", 2, 1);
+        Item item = new Item("water", 1.6f, "buy-2-get-1-free");
+        Pricer pricer = new Pricer();
+        int quantity = 5;
+        //when
+        float expected = 6.4f;
+        //then
+        assertEquals(expected, pricer.countOfferPromotionTotalPrice(promotion, item, quantity));
     }
 }
