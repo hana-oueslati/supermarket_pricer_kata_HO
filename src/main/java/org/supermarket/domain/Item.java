@@ -43,20 +43,20 @@ public class Item {
         return price;
     }
 
-    public String getName() {
-        return name;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public String getPromotionName() {
-        return promotionName;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public String getPromotionName() {
+        return promotionName;
     }
 
     public void setPromotionName(String promotionName) {

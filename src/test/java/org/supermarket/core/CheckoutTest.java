@@ -6,7 +6,10 @@ import org.supermarket.domain.Basket;
 import org.supermarket.domain.ItemDetails;
 import org.supermarket.domain.Promotion;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertThrows;
 
@@ -48,7 +51,7 @@ public class CheckoutTest extends TestCase {
             put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
         }};
-        checkout = new Checkout(pricer, weightPricer,promotions);
+        checkout = new Checkout(pricer, weightPricer, promotions);
         //when
         float requiredTotal = 4.3999996f;
 
@@ -64,7 +67,7 @@ public class CheckoutTest extends TestCase {
             put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
         }};
-        checkout = new Checkout(pricer, weightPricer,promotions);
+        checkout = new Checkout(pricer, weightPricer, promotions);
         //when
         float requiredTotal = 3.8f;
 
@@ -81,7 +84,7 @@ public class CheckoutTest extends TestCase {
             put("three-for-one-dollar", new Promotion("three-for-one-dollar", 1, 3));
             put("two-for-two-dollars", new Promotion("two-for-two-dollars", 2, 2));
         }};
-        checkout = new Checkout(pricer, weightPricer,promotions);
+        checkout = new Checkout(pricer, weightPricer, promotions);
         //when
         float requiredTotal = 3.4f;
 
