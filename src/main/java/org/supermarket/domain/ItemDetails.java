@@ -24,25 +24,12 @@ public class ItemDetails extends Item {
         this.boughtQuantity = boughtQuantity;
     }
 
-    public ItemDetails(String name, float price, String promotionName, String unit, float boughtQuantity) {
-        super(name, price, promotionName);
-        this.boughtUnit = unit;
-        this.boughtQuantity = boughtQuantity;
-    }
-
     public String getBoughtUnit() {
         return boughtUnit;
-    }
-
-    public void setBoughtUnit(String boughtUnit) {
-        this.boughtUnit = boughtUnit;
     }
 
     public float getBoughtQuantity() {
         return boughtQuantity;
     }
 
-    public void setBoughtQuantity(float boughtQuantity) {
-        this.boughtQuantity = boughtQuantity;
-    }
 }

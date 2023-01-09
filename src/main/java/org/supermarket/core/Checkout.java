@@ -30,7 +30,8 @@ public class Checkout {
     public float processWeightBasedTotalPrice(ItemDetails item, int count) {
         if (!promotionsDictionary.isEmpty() && promotionsDictionary.containsKey(item.getPromotionName())) {
             return weightPricer.countPromotionOnWeightTotalPrice(promotionsDictionary.get(item.getPromotionName()), item, count);
-        } else return weightPricer.countBasicWeightTotalPrice(item, count);
+        } else
+            return weightPricer.countBasicWeightTotalPrice(item, count);
     }
 
     public float processNumberBasedTotalPrice(Item item, int count) {
@@ -40,7 +41,8 @@ public class Checkout {
             else
                 return pricer.countOfferPromotionTotalPrice(promotionsDictionary.get(item.getPromotionName()), item, count);
 
-        } else return pricer.countBasicTotalPrice(item, count);
+        } else
+            return pricer.countBasicTotalPrice(item, count);
     }
 
     public float getTotalPrice(Basket basket) {
@@ -52,7 +54,7 @@ public class Checkout {
             int count = entry.getValue().size();
             if (item.getUnit() != null)
                 totalPrice[0] += processWeightBasedTotalPrice(item, count);
-            else{
+            else {
                 totalPrice[0] += processNumberBasedTotalPrice(item, count);
             }
 

@@ -1,5 +1,6 @@
 package org.supermarket.domain;
 
+import com.opencsv.bean.CsvBindByName;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
@@ -9,13 +10,23 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Promotion {
+    @CsvBindByName(column = "name")
     private String name;
+    @CsvBindByName(column = "price")
     private float price;
+    @CsvBindByName(column = "quantity")
     private int quantity;
+    @CsvBindByName(column = "quantity Offered")
     private int quantityOffered;
+    @CsvBindByName(column = "unit")
     private String unit;
+    @CsvBindByName(column = "weight")
     private float weight;
+    @CsvBindByName(column = "type")
     private String type;
+
+    public Promotion() {
+    }
 
     public Promotion(String type, String name, float price, int quantity) {
         if (StringUtils.isBlank(name))
@@ -60,47 +71,36 @@ public class Promotion {
         return quantity;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getUnit() {
         return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public float getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
-
     public int getQuantityOffered() {
         return quantityOffered;
-    }
-
-    public void setQuantityOffered(int quantityOffered) {
-        this.quantityOffered = quantityOffered;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "Promotion{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", quantityOffered=" + quantityOffered +
+                ", unit='" + unit + '\'' +
+                ", weight=" + weight +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

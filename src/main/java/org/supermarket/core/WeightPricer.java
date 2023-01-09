@@ -12,7 +12,7 @@ public class WeightPricer implements IWeightPricer {
     }
 
     public float countRestOfWeightTotalPrice(ItemDetails item, float weight) {
-        float weightToPay = 0;
+        float weightToPay;
         if (item.getBoughtUnit().equals(item.getUnit())) {
             weightToPay = weight / item.getWeight();
         } else {

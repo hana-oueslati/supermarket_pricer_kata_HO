@@ -43,39 +43,20 @@ public class Item {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPromotionName() {
         return promotionName;
     }
 
-    public void setPromotionName(String promotionName) {
-        this.promotionName = promotionName;
-    }
-
     public float getWeight() {
         return weight;
-    }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
     }
 
     public String getUnit() {
         return unit;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
 }
