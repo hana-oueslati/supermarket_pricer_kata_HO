@@ -24,6 +24,13 @@ public class Promotion {
         this.quantity = quantity;
     }
 
+    public Promotion(String name, float price, String unit, float weight) {
+        this.name = name;
+        this.price = price;
+        this.unit = unit;
+        this.weight = weight;
+    }
+
     public static Map<String, Promotion> getMappedPromotions(List<Promotion> promotions) {
         if (promotions != null && !promotions.isEmpty())
             return promotions.stream().collect(Collectors.toMap(Promotion::getName, Function.identity()));

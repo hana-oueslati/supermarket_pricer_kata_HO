@@ -24,6 +24,21 @@ public class Item {
         this.promotionName = promotionName;
     }
 
+    public Item(String name, float price, String promotionName, float weight, String unit) {
+        this.name = name;
+        this.price = price;
+        this.promotionName = promotionName;
+        this.weight = weight;
+        this.unit = unit;
+    }
+
+    public Item(String name, float price, float weight, String unit) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
+        this.unit = unit;
+    }
+
     public float getPrice() {
         return price;
     }

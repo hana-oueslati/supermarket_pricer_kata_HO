@@ -18,4 +18,6 @@ public class Pricer implements IPricer {
         float unreducedPrice = fullPriceProductsNumber * item.getPrice();
         return reducedPrice + unreducedPrice;
     }
+
+
 }
