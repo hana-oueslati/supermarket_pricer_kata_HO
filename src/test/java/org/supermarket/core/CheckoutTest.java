@@ -3,7 +3,7 @@ package org.supermarket.core;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.supermarket.domain.Basket;
-import org.supermarket.domain.Item;
+import org.supermarket.domain.ItemDetails;
 import org.supermarket.domain.Promotion;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class CheckoutTest extends TestCase {
     public void test_basic_basket_total_price_count() {
         //given
         checkout = new Checkout(pricer);
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new Item("pasta", 2.6f), new Item("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 2.6f), new ItemDetails("water", 1.8f))));
         List<Promotion> promotions = new ArrayList<>(Arrays.asList(new Promotion("three-for-one-dollar", 1, 3), new Promotion("two-for-two-dollars", 2, 2)));
 
         //when
@@ -59,7 +59,7 @@ public class CheckoutTest extends TestCase {
     public void test_basket_total_price_count_with_package_promotion() {
         //given
         checkout = new Checkout(pricer);
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new Item("pasta", 1.6f, "two-for-two-dollars"), new Item("pasta", 1.6f, "two-for-two-dollars"), new Item("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
         List<Promotion> promotions = new ArrayList<>(Arrays.asList(new Promotion("three-for-one-dollar", 1, 3), new Promotion("two-for-two-dollars", 2, 2)));
 
         //when
@@ -74,7 +74,7 @@ public class CheckoutTest extends TestCase {
     public void test_should_not_apply_promotion_because_quantity_is_less_then_required() {
         //given
         checkout = new Checkout(pricer);
-        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new Item("pasta", 1.6f, "two-for-two-dollars"), new Item("water", 1.8f))));
+        Basket basket = new Basket(new ArrayList<>(Arrays.asList(new ItemDetails("pasta", 1.6f, "two-for-two-dollars"), new ItemDetails("water", 1.8f))));
         List<Promotion> promotions = new ArrayList<>(Arrays.asList(new Promotion("three-for-one-dollar", 1, 3), new Promotion("two-for-two-dollars", 2, 2)));
 
         //when

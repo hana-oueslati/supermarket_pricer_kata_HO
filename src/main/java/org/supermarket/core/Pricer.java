@@ -4,8 +4,6 @@ import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;
 
 public class Pricer implements IPricer {
-    public Pricer() {
-    }
 
     public float countBasicTotalPrice(Item item, int quantity) {
         return item.getPrice() * quantity;

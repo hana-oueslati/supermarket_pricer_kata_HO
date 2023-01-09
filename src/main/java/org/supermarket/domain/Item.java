@@ -3,9 +3,11 @@ package org.supermarket.domain;
 import org.apache.commons.lang3.StringUtils;
 
 public class Item {
-    private final String name;
-    private final float price;
+    private String name;
+    private float price;
     private String promotionName;
+    private float weight;
+    private String unit;
 
     public Item(String name, float price) {
         if (StringUtils.isBlank(name))
@@ -32,5 +34,33 @@ public class Item {
 
     public String getPromotionName() {
         return promotionName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setPromotionName(String promotionName) {
+        this.promotionName = promotionName;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

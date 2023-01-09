@@ -24,4 +24,6 @@ public class ItemTest extends TestCase {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Item(" ", 12.6f));
         assertEquals("Item name should not be null, empty or whitespace", exception.getMessage());
     }
+
+
 }

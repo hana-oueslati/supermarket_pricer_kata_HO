@@ -9,9 +9,12 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Promotion {
-    private final String name;
-    private final float price;
-    private final int quantity;
+    private String name;
+    private float price;
+    private int quantity;
+    private String unit;
+    private float weight;
+
 
     public Promotion(String name, float price, int quantity) {
         if (StringUtils.isBlank(name))
@@ -37,5 +40,33 @@ public class Promotion {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 }

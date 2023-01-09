@@ -3,17 +3,17 @@ package org.supermarket.domain;
 import java.util.List;
 
 public class Basket {
-    private final List<Item> items;
+    private List<ItemDetails> items;
 
-    public Basket(List<Item> items) {
+    public Basket(List<ItemDetails> items) {
         this.items = items;
     }
 
-    public List<Item> getItems() {
+    public List<ItemDetails> getItems() {
         return items;
     }
 
-    public void addItems(Item item, int quantity) {
+    public void addItems(ItemDetails item, int quantity) {
         for (int i = 0; i < quantity; i++) {
             items.add(item);
         }
