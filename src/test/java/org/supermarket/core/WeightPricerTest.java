@@ -2,6 +2,7 @@ package org.supermarket.core;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import org.supermarket.core.pricing.WeightPricer;
 import org.supermarket.domain.ItemDetails;
 import org.supermarket.domain.Promotion;
 

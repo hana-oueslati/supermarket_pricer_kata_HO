@@ -1,6 +1,8 @@
 package org.supermarket.core;
 
 import org.apache.commons.lang3.StringUtils;
+import org.supermarket.core.pricing.IPricer;
+import org.supermarket.core.pricing.IWeightPricer;
 import org.supermarket.domain.Basket;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.ItemDetails;

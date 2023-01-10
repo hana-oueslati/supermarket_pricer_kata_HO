@@ -1,4 +1,4 @@
-package org.supermarket.core;
+package org.supermarket.core.pricing;
 
 import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;

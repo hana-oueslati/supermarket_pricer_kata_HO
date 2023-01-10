@@ -1,5 +1,6 @@
-package org.supermarket.core;
+package org.supermarket.core.pricing;
 
+import org.supermarket.core.pricing.IWeightPricer;
 import org.supermarket.domain.ItemDetails;
 import org.supermarket.domain.Promotion;
 import org.supermarket.utils.WeightConverter;

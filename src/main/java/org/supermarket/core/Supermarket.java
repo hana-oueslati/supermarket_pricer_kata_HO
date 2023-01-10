@@ -1,6 +1,10 @@
 package org.supermarket.core;
 
 import org.supermarket.core.inputs.ReadDataFromCsv;
+import org.supermarket.core.pricing.IPricer;
+import org.supermarket.core.pricing.IWeightPricer;
+import org.supermarket.core.pricing.Pricer;
+import org.supermarket.core.pricing.WeightPricer;
 import org.supermarket.domain.Basket;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.ItemDetails;

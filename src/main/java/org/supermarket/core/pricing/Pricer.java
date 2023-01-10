@@ -1,5 +1,6 @@
-package org.supermarket.core;
+package org.supermarket.core.pricing;
 
+import org.supermarket.core.pricing.IPricer;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;
 

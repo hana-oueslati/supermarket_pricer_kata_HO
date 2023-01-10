@@ -2,6 +2,7 @@ package org.supermarket.core;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import org.supermarket.core.pricing.Pricer;
 import org.supermarket.domain.Item;
 import org.supermarket.domain.Promotion;
 
