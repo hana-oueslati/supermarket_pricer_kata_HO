@@ -3,12 +3,6 @@ package org.supermarket.domain;
 import com.opencsv.bean.CsvBindByName;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
 public class Promotion {
     @CsvBindByName(column = "name")
     private String name;
@@ -37,7 +31,7 @@ public class Promotion {
         this.type = type;
     }
 
-    public Promotion(String name, int quantity,int quantityOffered,String type) {
+    public Promotion(String name, int quantity, int quantityOffered, String type) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Promotion name should not be null, empty or whitespace");
         this.name = name;
@@ -51,12 +45,6 @@ public class Promotion {
         this.price = price;
         this.unit = unit;
         this.weight = weight;
-    }
-
-    public static Map<String, Promotion> getMappedPromotions(List<Promotion> promotions) {
-        if (promotions != null && !promotions.isEmpty())
-            return promotions.stream().collect(Collectors.toMap(Promotion::getName, Function.identity()));
-        else return new HashMap<>();
     }
 
     public String getName() {
@@ -75,6 +63,10 @@ public class Promotion {
         return unit;
     }
 
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     public float getWeight() {
         return weight;
     }
@@ -85,10 +77,6 @@ public class Promotion {
 
     public String getType() {
         return type;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     @Override

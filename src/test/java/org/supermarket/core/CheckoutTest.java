@@ -31,7 +31,7 @@ public class CheckoutTest extends TestCase {
     }
 
     @Test
-    public void test_empty_basket_shoud_return_zero() {
+    public void test_empty_basket_should_return_zero() {
         //given
         checkout = new Checkout(pricer, weightPricer);
         Basket basket = new Basket(new ArrayList<>());

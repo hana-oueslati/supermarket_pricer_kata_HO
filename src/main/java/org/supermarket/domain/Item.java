@@ -72,7 +72,17 @@ public class Item {
         this.unit = unit;
     }
 
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
+    public void setPromotionName(String promotionName) {
+        this.promotionName = promotionName;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
 
     @Override
     public String toString() {
