@@ -1,11 +1,11 @@
-package org.supermarket.core.data;
+package org.supermarket.core.inputs;
 
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.supermarket.domain.Item;
+import org.supermarket.domain.ItemDetails;
 import org.supermarket.domain.Promotion;
 
-import java.io.IOException;
 import java.util.List;
 
 public class ReadDataFromCsvTest extends TestCase {
@@ -17,7 +17,7 @@ public class ReadDataFromCsvTest extends TestCase {
         int expected = 6;
         List<Promotion> promotions = ReadDataFromCsv.readPromotions(filePath);
         //then
-        assertEquals(expected,promotions.size());
+        assertEquals(expected, promotions.size());
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ReadDataFromCsvTest extends TestCase {
         String expected = promotion.toString();
         List<Promotion> promotions = ReadDataFromCsv.readPromotions(filePath);
         //then
-        assertEquals(expected,promotions.get(0).toString());
+        assertEquals(expected, promotions.get(0).toString());
     }
 
     @Test
@@ -51,20 +51,20 @@ public class ReadDataFromCsvTest extends TestCase {
         int expected = 4;
         List<Item> items = ReadDataFromCsv.readItems(filePath);
         //then
-        assertEquals(expected,items.size());
+        assertEquals(expected, items.size());
     }
 
     @Test
     public void test_the_first_item_line_is_imported_with_the_right_data() {
         //given
         String filePath = "src/main/resources/items.csv";
-        Item item = new Item("pasta", 2.6f,"buy_two_get_one_free");
+        Item item = new Item("pasta", 2.6f, "buy_two_get_one_free");
         item.setUnit("");
         //when
         String expected = item.toString();
         List<Item> items = ReadDataFromCsv.readItems(filePath);
         //then
-        assertEquals(expected,items.get(0).toString());
+        assertEquals(expected, items.get(0).toString());
     }
 
     @Test
@@ -75,5 +75,26 @@ public class ReadDataFromCsvTest extends TestCase {
         List<Item> items = ReadDataFromCsv.readItems(filePath);
         //then
         assertTrue(items.isEmpty());
+    }
+
+    @Test
+    public void test_wrong_basket_file_returns_empty_list() {
+        //given
+        String filePath = "basket.csv";
+        //when
+        List<ItemDetails> items = ReadDataFromCsv.readBasket(filePath);
+        //then
+        assertTrue(items.isEmpty());
+    }
+
+    @Test
+    public void test_number_of_basket_element_imported_from_file() {
+        //given
+        String filePath = "src/main/resources/basket.csv";
+        //when
+        int expected = 8;
+        List<ItemDetails> items = ReadDataFromCsv.readBasket(filePath);
+        //then
+        assertEquals(expected, items.size());
     }
 }

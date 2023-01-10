@@ -1,9 +1,15 @@
 package org.supermarket.domain;
 
+import com.opencsv.bean.CsvBindByName;
+
 public class ItemDetails extends Item {
+    @CsvBindByName(column = "bought unit")
     private String boughtUnit;
+    @CsvBindByName(column = "bought quantity")
     private float boughtQuantity;
 
+    public ItemDetails() {
+    }
     public ItemDetails(String name, float price) {
         super(name, price);
     }
@@ -32,4 +38,17 @@ public class ItemDetails extends Item {
         return boughtQuantity;
     }
 
+
+    @Override
+    public String toString() {
+        return "ItemDetails{" +
+                "name='" + super.getName() + '\'' +
+                ", price=" + super.getPrice() +
+                ", promotionName='" + super.getPromotionName() + '\'' +
+                ", weight=" + super.getWeight() +
+                ", unit='" + super.getWeight() + '\'' +
+                ", boughtUnit='" + boughtUnit + '\'' +
+                ", boughtQuantity=" + boughtQuantity +
+                '}';
+    }
 }
